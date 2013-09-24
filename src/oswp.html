@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+    <!-- Metadata -->
+    
+    <title>SymbolStore: Open Source Web Preview</title>
+    <meta name="author" content="Your Name Here" />
+    <meta name="description" content="An open source map preview of the SymbolStore API." />
+    <meta name="keywords" content="symbolstore,geovista" />
+    <meta charset="UTF-8" />
+
+    <!-- External libraries and Styles -->
+
+    <link rel='stylesheet' href='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.css' />
+    <script src='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.js'></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+    <!-- GeoVISTA libraries and Styles -->
+
+    <link rel="stylesheet" type="text/css" href="./styles/oswp.css" />
+    <script type="text/javascript" src="./scripts/oswp.js"></script>
+</head>
+<body>
+    <!-- 
+        This HTML document has 4 primary content components, all contained 
+        in div elements names "titleBlock", "search", "map", and "layers". 
+
+        The title block is exactly that, the title of the page.
+
+        The search block contains two elements, a text input and a button.
+        The text input is used to enter in a term by which to query the 
+        SymbolStore API. The button is used to submit this query to the
+        API, though hitting 'enter' (key-code 13) on which typing in the 
+        text input will also submit the query. When a query is submitted 
+        and successfully returns, all current symbols are removed from the
+        map and new symbols are added in their place. 
+
+        The map block is used by Leaflet.js, and the MapBox.js plug-in, to 
+        render the map into. The map is currently limited to the 
+        Washington, DC area from zoom level 11 to 16.
+
+        The controls block allows the user to control what type of base map 
+        is being shown. Options include either a standard street map or 
+        satellite imagery. Additions may be made in the future.
+
+        The final piece is a script element. Inside this element there is 
+        a single call to the init() function, which initializes the UI and 
+        populates 
+    -->
+    <div id="title">
+        <h1>SymbolStore API + MapBox.js</h1>
+    </div>
+    <div id="map"></div>
+    <script type="text/javascript">
+        init();
+    </script>
+</body>
+<footer>Symbols licensed under CC-BY-NC-SA, unless otherwise noted.</footer>
+</html>
