@@ -1,8 +1,8 @@
 MapBox.js + SymbolStore API
 ============================
 
-Ryan S Mullins
-GeoVISTA Center
+Ryan S Mullins    
+GeoVISTA Center    
 The Pennsylvania State University
 
 # Background
