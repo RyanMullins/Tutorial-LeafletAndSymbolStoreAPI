@@ -17,7 +17,7 @@ Of course, as with all development efforts, the SymbolStore API is constantly be
 
 There are several skills and tools that you will need to complete this tutorial. 
 
-**Skils**
+**Skills**
 
 * Some experience with [HTML](http://en.wikipedia.org/wiki/Html)
 * Some experience with [JavaScript](http://en.wikipedia.org/wiki/JavaScript)
