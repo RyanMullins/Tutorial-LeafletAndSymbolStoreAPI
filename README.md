@@ -9,7 +9,7 @@ The Pennsylvania State University
 
 The [SymbolStore][symstore] is an online repository of some 2300 symbols (and growing) that can be and are used to represent point features on maps, among other uses. As this repository has been presented at various conferences and in publications, some folks expressed an interest in a public API that would serve symbols to their applications. This API has now been actualized and is ready for public use.
 
-This tutorial show how to use some features of the current [API][symstoreapiref] with [MapBox.js][mapboxjs] to create a simple map that uses custom point symbols avialable on the SymbolStore. I begin with an introduction to the SymbolStore API, and discussion of its methods and responses. Following this you will actually build a map using the API, MapBox.js, and (optionally) [TileMill][tilemill]. 
+This tutorial show how to use some features of the current [API][symstoreapiref] with [MapBox.js][mapboxjs] to create a simple map that uses custom point symbols available on the SymbolStore. I begin with an introduction to the SymbolStore API, and discussion of its methods and responses. Following this you will actually build a map using the API, MapBox.js, and (optionally) [TileMill][tilemill]. 
 
 Of course, as with all development efforts, the SymbolStore API is constantly being refined and updated. I will do my best to update this tutorial as changes are made. But, if you notice I missed something please submit a bug, or (better still) fix it yourself and submit a pull request.
 
