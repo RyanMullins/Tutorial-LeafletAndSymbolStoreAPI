@@ -24,7 +24,7 @@ var init = function () {
 
     // ---- Map Data Layers and Groups ----
 
-    var strTiles = new L.mapbox.tileLayer("geovista.open-streets-dc");
+    new L.mapbox.tileLayer("geovista.ge226fb4").addTo(map);
     markers = new L.LayerGroup().addTo(map);
 
     // ---- jQuery for UI Elements ----
@@ -63,7 +63,7 @@ var init = function () {
 
 var getSymbols = function (searchTerm) {
     $.ajax({
-        'url' : "http://www.symbolstore.org/SymbolStoreRelease3REST/SymbolService.asmx/SearchSymbols",
+        'url' : "http://api.symbolstore.org/api.asmx/SearchSymbols",
         'data' : {
             'searchTerms' : ((searchTerm && searchTerm.length > 0) ? searchTerm : ""),
             'searchField' : "",

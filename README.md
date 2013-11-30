@@ -47,8 +47,8 @@ Please note, all parameters for API methods are required unless otherwise noted.
 The [SearchSymbols][symstoreapirefsearch] method provides the ability to search for symbols in the repository. Searches are conducted by querying the database of symbols based on a term, or series of terms, listed in the `serachTerm` parameter in the desired database fields. By default, the term(s) will be used to query against the name of the symbols, but this can be changed by defining a field or fields to query against using the `searchFields` parameter. Requests that leave the `serchTerm` parameter as an empty string will return all symbols in the repository, which can produce extremely long responses. To mitigate this long response problem the API paginates the response into pages of 25 symbols, the `page` parameter controls which page of results is returned in the response. You can also control the field by which symbols are ordered in the response using the `sortType` parameter. This method is fully documented below.
 
 ```Shell
-Host:            http://symbolstore.org
-Service:         /SymbolStoreRelease3REST/SymbolService.asmx
+Host:            http://api.symbolstore.org
+Service:         /api.asmx
 Method:          /SearchSymbols
 Parameters:      searchTerms  - Terms to query for, i.e. 'fire', 'hospital', 'football'
                  searchFields - Fields to search for terms in (name, organization, tags, etc.)
@@ -63,8 +63,8 @@ Request Type(s): GET, POST
 The [GetAllSymbols][symstoreapirefserve] method provides the ability to get the data associated with a specific list of symbols in the repository. By providing a list of unique identifiers to this method using the `symbolids` parameter you can specify the exact set of symbols that you would like to receive in the response. This response is not paginated. This method is fully documented below.
 
 ```Shell
-Host:            http://symbolstore.org
-Service:         /SymbolStoreRelease3REST/SymbolService.asmx
+Host:            http://api.symbolstore.org
+Service:         /api.asmx
 Method:          /GetAllContent
 Parameters:      symbolids - Array of UIDs for symbols
                  format    - Deprecated
@@ -125,6 +125,8 @@ $ git clone https://github.com/RyanMullins/Tutorial-LeafletAndSymbolStoreAPI.git
 
 This command will clone the project I have created onto your local machine. Inside the directory it creates you will find two files and three directories. The files are the license used on the code for this tutorial and the README file with the instructions you are currently reading. The 'src' directory contains the starter code for this tutorial; I provide a basic HTML page, a blank JavaScript file, and a CSS file to style things. The 'final' directory contains the completed, fully documented code for this tutorial, it is intended to be a reference for you as you work your way through this tutorial. The third directory, 'images', just has all the images used in figures during this tutorial an can be ignored.
 
+_**Optionally**: You can download a .ZIP archive of the source code from GitHub._
+
 Now, open the _oswp.html_ in your browser and take a look at what we have so far. It should look something like what is shown in Figure 2, a simple title and large blank space for the map, and a disclaimer abut the license for the symbols. 
 
 ![Figure 2. Starter Map](images/startermap.png)
@@ -166,7 +168,7 @@ var init = function () {
 
     // ---- Map Data Layers and Groups ----
 
-    var strTiles = new L.mapbox.tileLayer("AccountName.MapTileID")addTo(map);
+    new L.mapbox.tileLayer("AccountName.MapTileID").addTo(map);
     markers = new L.LayerGroup().addTo(map);
 };
 ```
@@ -190,7 +192,7 @@ You will be using [jQuery](http://jquery.com), a popular and very handy JavaScri
 ```JavaScript
 var getSymbols = function (searchTerm) {
     $.ajax({
-        'url' : "http://www.symbolstore.org/SymbolStoreRelease3REST/SymbolService.asmx/SearchSymbols",
+        'url' : "http://api.symbolstore.org/api.asmx/SearchSymbols",
         'data' : {
             'searchTerms' : ((searchTerm && searchTerm.length > 0) ? searchTerm : ""),
             'searchField' : "",
@@ -359,7 +361,7 @@ _This material is based upon work supported by the U.S. Department of Homeland S
 [installgit]: https://help.github.com/articles/set-up-git
 [mapboxjs]: http://www.mapbox.com/mapbox.js/api/v1.3.1/
 [symstore]: http://symbolstore.org
-[symstoreapiref]: http://www.symbolstore.org/SymbolStoreRelease3REST/SymbolService.asmx
-[symstoreapirefsearch]: http://www.symbolstore.org/SymbolStoreRelease3REST/SymbolService.asmx?op=SearchSymbols
-[symstoreapirefserve]: http://www.symbolstore.org/SymbolStoreRelease3REST/SymbolService.asmx?op=GetAllContent
+[symstoreapiref]: http://api.symbolstore.org/api.asmx
+[symstoreapirefsearch]: http://api.symbolstore.org/api.asmx?op=SearchSymbols
+[symstoreapirefserve]: http://api.symbolstore.org/api.asmx?op=GetAllContent
 [tilemill]: http://www.mapbox.com/tilemill/
